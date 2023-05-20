@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack-pro:1.4
+    container_name: localstack-example
+    hostname: localstack
+    ports:
+      - '4566:4566'
+      - '4510:4510'
+    environment:
+      # These variables are needed for localstack
+      - LOCALSTACK_API_KEY=4wCbMZX3Ja
+      - REGION=eu-central-1
+      - AWS_ACCESS_KEY_ID=mock_access_key
+      - AWS_SECRET_ACCESS_KEY=mock_secret_key
+      - DOCKER_HOST=unix:///var/run/docker.sock
